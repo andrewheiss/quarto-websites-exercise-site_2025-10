@@ -1,0 +1,22 @@
+---
+title: "Long running code"
+execute: 
+  freeze: auto
+---
+
+Intensive code!
+
+```{r}
+#| label: long-thing-1
+Sys.sleep(5)
+```
+
+```{r}
+#| label: long-thing-2
+Sys.sleep(5)
+```
+
+```{r}
+#| label: long-thing-3
+Sys.sleep(5)
+```

@@ -1,0 +1,25 @@
+project:
+  type: website
+
+execute: 
+  freeze: auto
+
+website:
+  title: "Example site"
+  navbar:
+    left:
+      - text: "{{< fa person-chalkboard >}} Teaching"
+        href: teaching.qmd
+      - text: "{{< fa flask >}} Research"
+        href: research.qmd
+    right:
+      - text: "{{< fa brands google-scholar >}}"
+        href: "https://example.com"
+
+format:
+  html:
+    theme:
+      - zephyr
+      - brand
+    css: styles.css
+    toc: true

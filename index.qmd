@@ -1,0 +1,23 @@
+---
+title: "quarto-websites-exercises_2025-10_site"
+filters:
+  - preview-colour
+# Deprecated configuration (will show warning):
+# preview-colour:
+#   code: true
+#   text: true
+# New recommended configuration:
+extensions:
+  preview-colour:
+    code: true
+    text: true
+---
+
+This is a Quarto website.
+
+To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+
+We use `#1696d2` for Democrats and  and `#db2b27` for Republicans.
+
+- Inline code: `#d7433b` or `rgb(215, 67, 59)`
+- Text: #38A6A5 or rgb(56,166,165)

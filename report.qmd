@@ -1,0 +1,146 @@
+---
+title: "Health and Wealth Around the World"
+subtitle: "Gapminder data, 1952–2007"
+date: "2025-10-16"
+bibliography: bib/references.bib
+csl: bib/chicago-author-date.csl
+format:
+  html:
+    code-fold: false
+    code-summary: "Show code"
+    page-layout: full
+    toc: false
+    knitr:
+      opts_chunk: 
+        fig-align: "center"
+execute:
+  warning: false
+  message: false
+  echo: false
+---
+
+```{r}
+#| label: load-libraries-data
+#| warning: false
+#| message: false
+
+library(tidyverse)
+library(patchwork)
+library(ggridges)
+library(tinytable)
+
+theme_gapminder <- theme_minimal() +
+  theme(
+    plot.title = element_text(face = "bold"),
+    plot.subtitle = element_text(face = "bold", color = "gray50"),
+    axis.title.x = element_text(hjust = 0),
+    axis.title.y = element_text(hjust = 1)
+  )
+
+gapminder <- read_csv("data/gapminder.csv")
+
+n_countries <- n_distinct(gapminder$country)
+first_year <- min(gapminder$year)
+last_year <- max(gapminder$year)
+```
+
+## Introduction
+
+This analysis shows trends in life expectancy and GDP per capita for `{r} n_countries` countries from XXXX to YYYY. The data was originally collected by Hans Rosling and the Gapminder foundation.
+
+## Continent-level trends
+
+Average life expectancy increased substantially between XXXX and YYYY. Asia saw the biggest average increase (see @tbl-continent).
+
+```{r}
+#| label: fig-distribution-continent
+#| fig-cap: "Distribution of life expectancy within continents"
+#| fig-width: 6
+#| fig-height: 4
+#| out-width: 80%
+
+lifeexp_1952 <- gapminder |>
+  filter(year == 1952, continent != "Oceania") |>
+  ggplot(aes(x = lifeExp, y = fct_rev(continent), fill = continent)) +
+  geom_density_ridges(color = "white") +
+  scale_x_continuous(limits = c(20, 90)) +
+  guides(fill = "none") +
+  labs(
+    x = NULL,
+    y = NULL,
+    title = "Life expectancy by continent",
+    subtitle = "1952"
+  ) +
+  theme_gapminder
+
+lifeexp_2007 <- gapminder |>
+  filter(year == 2007, continent != "Oceania") |>
+  ggplot(aes(x = lifeExp, y = fct_rev(continent), fill = continent)) +
+  geom_density_ridges(color = "white") +
+  scale_x_continuous(limits = c(20, 90)) +
+  guides(fill = "none") +
+  labs(
+    x = "Life expectancy (years)",
+    y = NULL,
+    subtitle = "2007",
+    caption = "Oceania omitted"
+  ) +
+  theme_gapminder
+
+lifeexp_1952 / lifeexp_2007
+```
+
+```{r}
+#| label: tbl-continent
+#| tbl-cap: "Change in average life expectancy by continent"
+#| message: false
+
+gapminder |>
+  filter(year %in% c(1952, 2007)) |>
+  group_by(continent, year) |>
+  summarize(avg_life = mean(lifeExp)) |>
+  group_by(continent) |>
+  mutate(diff = avg_life - lag(avg_life)) |>
+  ungroup() |>
+  pivot_wider(names_from = year, values_from = c(avg_life, diff)) |>
+  arrange(desc(diff_2007)) |>
+  select(
+    Continent = continent,
+    `1952` = avg_life_1952,
+    `2007` = avg_life_2007,
+    Change = diff_2007
+  ) |> 
+  tt(digits = 3) |> 
+  style_tt(j = 1, align = "l") |> 
+  style_tt(j = 2:4, align = "c") |> 
+  style_tt(i = 1, color = "#03BFC4", bold = TRUE) |> 
+  group_tt(j = list(Averages = 2:3))
+```
+
+## Country-level trends
+
+@fig-health-wealth recreates a part of Hans Rosling's famous ["200 countries, 200 years, 4 minutes" video](https://www.youtube.com/watch?v=jbkSRLYSojo) and shows the relationship betweeen GDP per capita and life expectancy.
+
+```{r}
+#| label: fig-health-wealth
+#| fig-cap: "GDP per capita and life expectancy are closely related"
+#| fig-width: 6
+#| fig-height: 4
+#| out-width: 80%
+
+gapminder |>
+  filter(year == 2007) |>
+  ggplot(aes(x = gdpPercap, y = lifeExp)) +
+  geom_smooth(method = "lm", color = "orange") +
+  geom_point(aes(size = pop, color = continent)) +
+  scale_x_log10(labels = scales::label_dollar(accuracy = 1)) +
+  scale_size_continuous(labels = scales::label_comma()) +
+  labs(
+    x = "GDP per capita",
+    y = "Life expectancy (years)",
+    size = "Country population",
+    color = "Continent",
+    title = "Health and wealth in 2007"
+  ) +
+  theme_gapminder
+```
