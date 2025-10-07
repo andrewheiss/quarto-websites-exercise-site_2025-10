@@ -1,0 +1,12 @@
+---
+title: "Quarto website example"
+format: 
+  gfm:
+    wrap: preserve
+---
+
+Content for Andrew Heiss's ["Create an Online Presence with Quarto Websites"](https://andrewheiss.github.io/quarto-websites_2025-10/) Code Horizons short course.
+
+::: {.callout-warning}
+The content here isn't 100% final and **will be changed** before the course. Don't download or clone anything here just yet!
+:::
