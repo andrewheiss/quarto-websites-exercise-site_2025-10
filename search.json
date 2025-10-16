@@ -1,0 +1,142 @@
+[
+  {
+    "objectID": "examples/brand-playground.html",
+    "href": "examples/brand-playground.html",
+    "title": "Brand playground",
+    "section": "",
+    "text": "library(tidyverse)\nlibrary(brand.yml)\n\nbrand &lt;- read_brand_yml(\"../urban-institute.yml\")\n\n# library(showtext)\n# font_add_google(brand$typography$fonts[[1]]$family)\n# font_add_google(brand$typography$fonts[[2]]$family)\n# showtext_auto()\n\nbrand_theme &lt;- quarto::theme_brand_ggplot2(\"../urban-institute.yml\") +\n  theme(\n    text = element_text(family = brand$typography$fonts[[1]]$family, size = 13)\n  )\n\nggplot(mpg, aes(x = displ, y = hwy, color = drv)) +\n  geom_point() +\n  labs(title = \"A plot\") +\n  scale_color_manual(\n    values = c(\n      brand$color$palette$blue,\n      brand$color$palette$black,\n      brand$color$palette$yellow\n    )\n  ) +\n  brand_theme",
+    "crumbs": [
+      "Brand playground"
+    ]
+  },
+  {
+    "objectID": "examples/brand-playground.html#a-second-level-heading",
+    "href": "examples/brand-playground.html#a-second-level-heading",
+    "title": "Brand playground",
+    "section": "A second level heading",
+    "text": "A second level heading\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\nHeading 3\nWe use #1696d2◉ for Democrats and and #db2b27◉ for Republicans.\n\nInline code: #d7433b◉ or rgb(215, 67, 59)◉\nText: #38A6A5◉ or rgb(56,166,165)◉",
+    "crumbs": [
+      "Brand playground"
+    ]
+  },
+  {
+    "objectID": "examples/index.html",
+    "href": "examples/index.html",
+    "title": "Examples",
+    "section": "",
+    "text": "This is red.\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Title\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\nAuthor\n\n\n\n\n\n\n\n\nOct 16, 2025\n\n\nBrand playground\n\n\n \n\n\n\n\n\n\nOct 16, 2025\n\n\nHealth and Wealth Around the World\n\n\n \n\n\n\n\n\n\nOct 16, 2025\n\n\nLong running code\n\n\n \n\n\n\n\n\n\n \n\n\n \n\n\n \n\n\n\n\n\n\n \n\n\n \n\n\n \n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "teaching/index.html",
+    "href": "teaching/index.html",
+    "title": "Teaching",
+    "section": "",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis posuere ligula sit amet lacinia. Duis dignissim pellentesque magna, rhoncus congue sapien finibus mollis. Ut eu sem laoreet, vehicula ipsum in, convallis erat. Vestibulum magna sem, blandit pulvinar augue sit amet, auctor malesuada sapien. Nullam faucibus leo eget eros hendrerit, non laoreet ipsum lacinia. Curabitur cursus diam elit, non tempus ante volutpat a. Quisque hendrerit blandit purus non fringilla. Integer sit amet elit viverra ante dapibus semper. Vestibulum viverra rutrum enim, at luctus enim posuere eu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\nNunc ac dignissim magna. Vestibulum vitae egestas elit. Proin feugiat leo quis ante condimentum, eu ornare mauris feugiat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris cursus laoreet ex, dignissim bibendum est posuere iaculis. Suspendisse et maximus elit. In fringilla gravida ornare. Aenean id lectus pulvinar, sagittis felis nec, rutrum risus. Nam vel neque eu arcu blandit fringilla et in quam. Aliquam luctus est sit amet vestibulum eleifend. Phasellus elementum sagittis molestie. Proin tempor lorem arcu, at condimentum purus volutpat eu. Fusce et pellentesque ligula. Pellentesque id tellus at erat luctus fringilla. Suspendisse potenti."
+  },
+  {
+    "objectID": "about/index.html",
+    "href": "about/index.html",
+    "title": "Ada Lovelace",
+    "section": "",
+    "text": "Augusta Ada King, Countess of Lovelace (née Byron; 10 December 1815 – 27 November 1852), also known as Ada Lovelace, was an English mathematician and writer chiefly known for her work on Charles Babbage’s proposed mechanical general-purpose computer, the Analytical Engine. She was the first to recognise that the machine had applications beyond pure calculation. Ada Lovelace is sometimes considered to be the first computer programmer."
+  },
+  {
+    "objectID": "about/index.html#background",
+    "href": "about/index.html#background",
+    "title": "Ada Lovelace",
+    "section": "",
+    "text": "Augusta Ada King, Countess of Lovelace (née Byron; 10 December 1815 – 27 November 1852), also known as Ada Lovelace, was an English mathematician and writer chiefly known for her work on Charles Babbage’s proposed mechanical general-purpose computer, the Analytical Engine. She was the first to recognise that the machine had applications beyond pure calculation. Ada Lovelace is sometimes considered to be the first computer programmer."
+  },
+  {
+    "objectID": "about/index.html#accomplishments",
+    "href": "about/index.html#accomplishments",
+    "title": "Ada Lovelace",
+    "section": "Accomplishments",
+    "text": "Accomplishments\nBetween 1842 and 1843, Lovelace translated an article by the military engineer Luigi Menabrea (later Prime Minister of Italy) about the Analytical Engine, supplementing it with seven long explanatory notes. These notes described a method of using the machine to calculate Bernoulli numbers which is often called the first published computer program."
+  },
+  {
+    "objectID": "research/index.html",
+    "href": "research/index.html",
+    "title": "Research",
+    "section": "",
+    "text": "My research projects\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\n\nAuthor\n\n\n\n\n\n\n\n\nProject 1\n\n\n \n\n\n\n\n\n\nProject 2\n\n\n \n\n\n\n\n\n\nProject 3\n\n\n \n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "research/project1.html",
+    "href": "research/project1.html",
+    "title": "Project 1",
+    "section": "",
+    "text": "Project 1 details"
+  },
+  {
+    "objectID": "research/project2.html",
+    "href": "research/project2.html",
+    "title": "Project 2",
+    "section": "",
+    "text": "Project 2 details"
+  },
+  {
+    "objectID": "research/project3.html",
+    "href": "research/project3.html",
+    "title": "Project 3",
+    "section": "",
+    "text": "Project 3 details"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "quarto-websites-exercises_2025-10_site",
+    "section": "",
+    "text": "Playground site!"
+  },
+  {
+    "objectID": "examples/long-running-stuff.html",
+    "href": "examples/long-running-stuff.html",
+    "title": "Long running code",
+    "section": "",
+    "text": "Intensive code!\n\nSys.sleep(5)\n\n\nSys.sleep(5)\n\n\nSys.sleep(5)",
+    "crumbs": [
+      "Long running code"
+    ]
+  },
+  {
+    "objectID": "examples/report.html",
+    "href": "examples/report.html",
+    "title": "Health and Wealth Around the World",
+    "section": "",
+    "text": "This analysis shows trends in life expectancy and GDP per capita for 142 countries from 1952 to 2007. The data was originally collected by Hans Rosling and the Gapminder foundation (Rosling et al. 2018).\n\n\n\n\n\n\nImportantKey findings\n\n\n\nHealth and wealth are correlated!",
+    "crumbs": [
+      "Health and Wealth Around the World"
+    ]
+  },
+  {
+    "objectID": "examples/report.html#introduction",
+    "href": "examples/report.html#introduction",
+    "title": "Health and Wealth Around the World",
+    "section": "",
+    "text": "This analysis shows trends in life expectancy and GDP per capita for 142 countries from 1952 to 2007. The data was originally collected by Hans Rosling and the Gapminder foundation (Rosling et al. 2018).\n\n\n\n\n\n\nImportantKey findings\n\n\n\nHealth and wealth are correlated!",
+    "crumbs": [
+      "Health and Wealth Around the World"
+    ]
+  },
+  {
+    "objectID": "examples/report.html#continent-level-trends",
+    "href": "examples/report.html#continent-level-trends",
+    "title": "Health and Wealth Around the World",
+    "section": "Continent-level trends",
+    "text": "Continent-level trends\nAccording to Figure 1, average life expectancy increased substantially between 1952 to 2007. Asia saw the biggest average increase (see Table 1).\n\n\n\n\n\n\n\n\nFigure 1: Distribution of life expectancy within four continents\n\n\n\n\n\n\n\n\n\nTable 1: Change in average life expectancy by continent\n\n\n\n\n\n    \n\n    \n\n    \n    \n    \n      \n        \n        \n\n \nAverages\n \n\n              \n                Continent\n                1952\n                2007\n                Change\n              \n        \n        \n        \n                \n                  Asia\n                  46.3\n                  70.7\n                  24.4\n                \n                \n                  Americas\n                  53.3\n                  73.6\n                  20.3\n                \n                \n                  Africa\n                  39.1\n                  54.8\n                  15.7\n                \n                \n                  Europe\n                  64.4\n                  77.6\n                  13.2\n                \n                \n                  Oceania\n                  69.3\n                  80.7\n                  11.5",
+    "crumbs": [
+      "Health and Wealth Around the World"
+    ]
+  },
+  {
+    "objectID": "examples/report.html#country-level-trends",
+    "href": "examples/report.html#country-level-trends",
+    "title": "Health and Wealth Around the World",
+    "section": "Country-level trends",
+    "text": "Country-level trends\nFigure 2 recreates a part of Hans Rosling’s famous “200 countries, 200 years, 4 minutes” video and shows the relationship betweeen GDP per capita and life expectancy.\n\n\n\n\n\n\n\n\nFigure 2: GDP per capita and life expectancy are closely related",
+    "crumbs": [
+      "Health and Wealth Around the World"
+    ]
+  }
+]

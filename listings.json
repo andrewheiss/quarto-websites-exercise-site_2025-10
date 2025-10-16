@@ -1,0 +1,18 @@
+[
+  {
+    "listing": "/examples/index.html",
+    "items": [
+      "/examples/brand-playground.html",
+      "/examples/report.html",
+      "/examples/long-running-stuff.html"
+    ]
+  },
+  {
+    "listing": "/research/index.html",
+    "items": [
+      "/research/project1.html",
+      "/research/project2.html",
+      "/research/project3.html"
+    ]
+  }
+]
