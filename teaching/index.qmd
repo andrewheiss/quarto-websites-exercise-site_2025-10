@@ -1,0 +1,7 @@
+---
+title: "Teaching"
+---
+
+{{< placeholder 400 200 format=svg >}}
+
+{{< lipsum 2 >}}

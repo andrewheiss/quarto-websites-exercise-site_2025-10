@@ -2,14 +2,13 @@
 title: "Health and Wealth Around the World"
 subtitle: "Gapminder data, 1952–2007"
 date: "2025-10-16"
-bibliography: bib/references.bib
-csl: bib/chicago-author-date.csl
+bibliography: ../bib/references.bib
+csl: ../bib/chicago-author-date.csl
 format:
   html:
-    code-fold: false
+    code-fold: true
     code-summary: "Show code"
-    page-layout: full
-    toc: false
+    toc: true
     knitr:
       opts_chunk: 
         fig-align: "center"
@@ -46,15 +45,22 @@ last_year <- max(gapminder$year)
 
 ## Introduction
 
-This analysis shows trends in life expectancy and GDP per capita for `{r} n_countries` countries from XXXX to YYYY. The data was originally collected by Hans Rosling and the Gapminder foundation.
+This analysis shows **trends in life expectancy** and GDP per capita for `{r} n_countries` countries from `{r} first_year` to `{r} last_year`. The data was originally collected by Hans Rosling and [the Gapminder foundation](https://www.gapminder.org) [@RoslingRoslingRonnlund:2018].
+
+::: {.callout-important}
+### Key findings
+
+Health and wealth are correlated!
+:::
+
 
 ## Continent-level trends
 
-Average life expectancy increased substantially between XXXX and YYYY. Asia saw the biggest average increase (see @tbl-continent).
+According to @fig-distribution-continent, average life expectancy [increased substantially]{style="color: #ec008b;"} between `{r} first_year` to `{r} last_year`. Asia saw the biggest average increase (see @tbl-continent).
 
 ```{r}
 #| label: fig-distribution-continent
-#| fig-cap: "Distribution of life expectancy within continents"
+#| fig-cap: "Distribution of life expectancy within four continents"
 #| fig-width: 6
 #| fig-height: 4
 #| out-width: 80%

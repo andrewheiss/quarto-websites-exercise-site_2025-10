@@ -1,5 +1,6 @@
 ---
 title: "Long running code"
+date: 2025-10-16
 execute: 
   freeze: auto
 ---

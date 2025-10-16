@@ -12,23 +12,29 @@ logo:
 
 color:
   palette:
-    dark-purple: "#93358c"
-    light-purple: "#f8f6fb"
-    teal: "#04afaf"
-    dark-blue: "#086992"
-    hot-pink: "#eb068c"
-    light-blue: "#1aade4"
+    blue: "#1696d2"
+    gray-light: "#d2d2d2"
+    black: "#000000"
+    yellow: "#fdbf11"
+    magenta: "#ec008b"
+    green: "#55b748"
+    gray-dark: "#5c5859"
+    red: "#db2b27"
+    orange: "#e88e2d"
+    white: "#ffffff"
 
-  background: light-purple
-  foreground: black
-  primary: dark-purple
-  secondary: hot-pink
-  tertiary: light-blue
+  background: white
+  foreground: gray-dark
+  primary: blue
+  secondary: yellow
   dark: black
 
 typography:
   fonts:
     - family: Lato
+      source: google
+      weight: [400, 700]
+    - family: Jost
       source: google
       weight: [400, 700]
 
@@ -37,9 +43,8 @@ typography:
     weight: 400
 
   headings:
-    family: Lato
+    family: Jost
     weight: 700
-    color: dark-purple
 
   link:
     color: primary
@@ -49,10 +54,19 @@ defaults:
   bootstrap:
     functions: # string with SCSS functions
     defaults:  # list of Bootstrap Sass variables to override
-      link-hover-color: $brand-pink
+      link-hover-color: $brand-magenta
     mixins:    # string with SCSS mixins
     rules: |   # string with SCSS rules
       #quarto-content h2, #quarto-content h3 {
           text-transform: uppercase;
           letter-spacing: 1px;
+      }
+
+      .content .highlight {
+          color: $brand-yellow;
+      }
+
+      .navbar-title {
+          font-family: Jost;
+          font-weight: 700;
       }

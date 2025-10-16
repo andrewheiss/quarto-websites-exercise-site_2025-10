@@ -1,0 +1,8 @@
+---
+title: "Examples"
+listing:
+  contents: "*"
+  type: table
+---
+
+This is [**red**]{.my-red}.

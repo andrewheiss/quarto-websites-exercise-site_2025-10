@@ -1,25 +1,45 @@
 project:
   type: website
+  preview:
+    port: 5555
 
 execute: 
   freeze: auto
 
 website:
   title: "Example site"
+
+  repo-url: "https://github.com/andrewheiss/quarto-websites-exercise-site_2025-10"
+  repo-actions: [source, issue]
+
   navbar:
+    background: primary
     left:
+      - text: "{{< fa user >}} About"
+        href: about/index.qmd
       - text: "{{< fa person-chalkboard >}} Teaching"
-        href: teaching.qmd
+        href: teaching/index.qmd
       - text: "{{< fa flask >}} Research"
-        href: research.qmd
+        href: research/index.qmd
+      - text: "{{< fa lightbulb >}} Examples"
+        href: examples/index.qmd
     right:
+      - icon: github
+        href: https://github.com/andrewheiss/quarto-websites-exercise-site_2025-10
       - text: "{{< fa brands google-scholar >}}"
         href: "https://example.com"
+
+  sidebar: 
+    - title: "{{< fa lightbulb >}} Examples"
+      contents: 
+        # - examples/index.qmd
+        - auto: examples/*
 
 format:
   html:
     theme:
       - zephyr
-      - brand
-    css: styles.css
+      - custom.scss
+      # - brand
+    # css: styles.css
     toc: true

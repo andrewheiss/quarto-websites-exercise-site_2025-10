@@ -1,0 +1,80 @@
+---
+title: "Brand playground"
+date: 2025-10-16
+filters:
+  - preview-colour
+extensions:
+  preview-colour:
+    code: true
+    text: true
+---
+
+```{r}
+#| warning: false
+#| message: false
+#| fig-width: 5
+#| fig-height: 3
+#| fig-retina: 3
+
+library(tidyverse)
+library(brand.yml)
+
+brand <- read_brand_yml("../urban-institute.yml")
+
+# library(showtext)
+# font_add_google(brand$typography$fonts[[1]]$family)
+# font_add_google(brand$typography$fonts[[2]]$family)
+# showtext_auto()
+
+brand_theme <- quarto::theme_brand_ggplot2("../urban-institute.yml") +
+  theme(
+    text = element_text(family = brand$typography$fonts[[1]]$family, size = 13)
+  )
+
+ggplot(mpg, aes(x = displ, y = hwy, color = drv)) +
+  geom_point() +
+  labs(title = "A plot") +
+  scale_color_manual(
+    values = c(
+      brand$color$palette$blue,
+      brand$color$palette$black,
+      brand$color$palette$yellow
+    )
+  ) +
+  brand_theme
+```
+
+# Heading 1
+
+::: callout-note
+Important
+:::
+
+::: callout-warning
+Important
+:::
+
+::: callout-important
+Important
+:::
+
+::: callout-tip
+Important
+:::
+
+::: callout-caution
+Important
+:::
+
+This is a Quarto website.
+
+## A second level [heading]{.highlight}
+
+To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+
+### Heading 3
+
+We use `#1696d2` for Democrats and and `#db2b27` for Republicans.
+
+- Inline code: `#d7433b` or `rgb(215, 67, 59)`
+- Text: #38A6A5 or rgb(56,166,165)
