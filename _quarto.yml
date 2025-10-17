@@ -1,7 +1,7 @@
 project:
   type: website
   preview:
-    port: 5555
+    port: 2222
 
 execute: 
   freeze: auto
@@ -23,6 +23,8 @@ website:
         href: research/index.qmd
       - text: "{{< fa lightbulb >}} Examples"
         href: examples/index.qmd
+      - text: "Exercise 1"
+        href: 01-exercise.qmd
     right:
       - icon: github
         href: https://github.com/andrewheiss/quarto-websites-exercise-site_2025-10
@@ -40,6 +42,6 @@ format:
     theme:
       - zephyr
       - custom.scss
-      # - brand
+      - brand
     # css: styles.css
     toc: true
